@@ -58,6 +58,7 @@ class encn_Cambridge {
                 reading = (reading_uk || reading_us) ? `UK[${reading_uk}] US[${reading_us}] ` : '';
             }
             let pos = T(entry.querySelector('.posgram'));
+            pos = pos ? `<span class='pos'>${pos}</span>` : '';
             audios[0] = entry.querySelector(".uk.dpron-i source");
             audios[0] = audios[0] ? 'https://dictionary.cambridge.org' + audios[0].getAttribute('src') : '';
             //audios[0] = audios[0].replace('https', 'http');
@@ -87,12 +88,13 @@ class encn_Cambridge {
                         // let chn_tran = T(defblock.querySelector('.def-body .trans'));
                         if (!eng_tran) continue;
                         let level = T(defblock.querySelector('.ddef_h .def-info'));
+                        level =  level ? `<span class='pos'>${level}</span>` : '';
                         let definition = '';
                         eng_tran = `<span class='eng_tran'>${eng_tran.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span>`;
                         // chn_tran = `<span class='chn_tran'>${chn_tran}</span>`;
                         let tran = `<span class='tran'>${eng_tran}</span>`;
-                        let pos__ = pos ? `<span class='pos'>${level},${pos}</span>` : '';
-                        definition += phrasehead ? `${phrasehead}${tran}` : `${pos__}${tran}`;
+                        definition += phrasehead ? `${phrasehead}${tran}` : `${level}${pos}${tran}`;
+
                         // make exmaple segement
                         let examps = defblock.querySelectorAll('.def-body .examp') || [];
                         if (examps.length > 0 && this.maxexample > 0) {
