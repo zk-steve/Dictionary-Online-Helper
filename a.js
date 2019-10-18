@@ -88,7 +88,7 @@ class encn_Cambridge {
                         // let chn_tran = T(defblock.querySelector('.def-body .trans'));
                         if (!eng_tran) continue;
                         let level = T(defblock.querySelector('.ddef_h .def-info'));
-                        level =  level ? `<span class='pos'>${level}</span>` : '';
+                        level =  level ? `<span class='level'>${level}</span>` : '';
                         let definition = '';
                         eng_tran = `<span class='eng_tran'>${eng_tran.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span>`;
                         // chn_tran = `<span class='chn_tran'>${chn_tran}</span>`;
@@ -226,6 +226,7 @@ class encn_Cambridge {
                 div.phrasehead{margin: 2px 0;font-weight: bold;}
                 span.star {color: #FFBB00;}
                 span.pos  {text-transform:lowercase; font-size:0.9em; margin-right:5px; padding:2px 4px; color:white; background-color:#0d47a1; border-radius:3px;}
+                span.pos  {text-transform:uppercase; font-size:0.9em; margin-right:5px; padding:2px 4px; color:white; background-color:#0d47a1; border-radius:3px;}
                 span.tran {margin:0; padding:0;}
                 span.eng_tran {margin-right:3px; padding:0;}
                 /*span.chn_tran {color:#0d47a1;}*/
