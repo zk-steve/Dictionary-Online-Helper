@@ -120,7 +120,7 @@ class encn_Cambridge {
                 audios
             });
         }
-        let idioms = doc.querySelectorAll('.pr .idiom-block') || [];
+        let idioms = doc.querySelectorAll('.pr > .idiom-block') || [];
         for (const idiom of idioms) {
             let definitions = [];
             let audios = [];
