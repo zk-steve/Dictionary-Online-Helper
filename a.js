@@ -45,6 +45,7 @@ class encn_Cambridge {
         }
 
         let entries = doc.querySelectorAll('.pr .entry-body__el') || [];
+        let finalDefinitions = [];
         for (const entry of entries) {
             let definitions = [];
             let audios = [];
@@ -113,12 +114,13 @@ class encn_Cambridge {
                     }
                 }
             }
+            finalDefinitions = finalDefinitions.push(...definitions);
             let css = this.renderCSS();
             notes.push({
                 css,
                 expression,
                 reading,
-                definitions,
+                definitions: finalDefinitions,
                 audios,
                 extrainfo: posText
             });
@@ -193,11 +195,12 @@ class encn_Cambridge {
                 }
             }
             let css = this.renderCSS();
+            finalDefinitions = finalDefinitions.push(...definitions);
             notes.push({
                 css,
                 expression,
                 reading,
-                definitions,
+                definitions: finalDefinitions,
                 audios
             });
         }
