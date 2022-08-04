@@ -70,6 +70,7 @@ class encn_Cambridge {
             for (const sensbody of sensbodys) {
                 let sensblocks = sensbody.childNodes || [];
                 let guideWord = T(sensbody.previousElementSibling.querySelector(".guideword"));
+                guideWord = guideWord ? `<span class='pos'>${guideWord}</span>` : '';
                 for (const sensblock of sensblocks) {
                     let phrasehead = '';
                     let defblocks = [];
@@ -119,6 +120,8 @@ class encn_Cambridge {
                 reading,
                 definitions,
                 audios,
+                extraInfo:"assaf",
+                extrainfo:"aaaaaa"
             });
         }
         let idioms = doc.querySelectorAll('.pr > .idiom-block') || [];
@@ -147,6 +150,7 @@ class encn_Cambridge {
             for (const sensbody of sensbodys) {
                 let sensblocks = sensbody.childNodes || [];
                 let guideWord = T(sensbody.previousElementSibling.querySelector(".guideword"));
+                guideWord = guideWord ? `<span class='pos'>${guideWord}</span>` : '';
                 for (const sensblock of sensblocks) {
                     let phrasehead = '';
                     let defblocks = [];
