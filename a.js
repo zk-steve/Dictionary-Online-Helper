@@ -57,8 +57,8 @@ class encn_Cambridge {
                 let reading_us = T(readings[1]);
                 reading = (reading_uk || reading_us) ? `\/${reading_uk}\/   \/${reading_us}\/ ` : '';
             }
-            let pos = T(entry.querySelector('.posgram'));
-            pos = pos ? `<span class='pos'>${pos}</span>` : '';
+            let posText = T(entry.querySelector('.posgram'));
+            let pos = posText ? `<span class='pos'>${posText}</span>` : '';
             audios[0] = entry.querySelector(".uk.dpron-i source");
             audios[0] = audios[0] ? 'https://dictionary.cambridge.org' + audios[0].getAttribute('src') : '';
             //audios[0] = audios[0].replace('https', 'http');
@@ -120,8 +120,7 @@ class encn_Cambridge {
                 reading,
                 definitions,
                 audios,
-                extraInfo:"assaf",
-                extrainfo:"aaaaaa"
+                extrainfo: posText
             });
         }
         let idioms = doc.querySelectorAll('.pr > .idiom-block') || [];
