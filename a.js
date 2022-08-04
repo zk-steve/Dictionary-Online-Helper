@@ -69,7 +69,7 @@ class encn_Cambridge {
             let sensbodys = entry.querySelectorAll('.sense-body') || [];
             for (const sensbody of sensbodys) {
                 let sensblocks = sensbody.childNodes || [];
-                let guideWord = sensbody.previousElementSibling.querySelector(".guideword").innerText ?? '';
+                let guideWord = T(sensbody.previousElementSibling.querySelector(".guideword"));
                 for (const sensblock of sensblocks) {
                     let phrasehead = '';
                     let defblocks = [];
@@ -119,8 +119,6 @@ class encn_Cambridge {
                 reading,
                 definitions,
                 audios,
-                extraInfor:"assaf",
-                extrainfo:"aaaaaa"
             });
         }
         let idioms = doc.querySelectorAll('.pr > .idiom-block') || [];
@@ -148,7 +146,7 @@ class encn_Cambridge {
             let sensbodys = idiom.querySelectorAll('.sense-body') || [];
             for (const sensbody of sensbodys) {
                 let sensblocks = sensbody.childNodes || [];
-                let guideWord = sensbody.previousElementSibling.querySelector(".guideword").innerText ?? '';
+                let guideWord = T(sensbody.previousElementSibling.querySelector(".guideword"));
                 for (const sensblock of sensblocks) {
                     let phrasehead = '';
                     let defblocks = [];
