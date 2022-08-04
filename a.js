@@ -69,6 +69,7 @@ class encn_Cambridge {
             let sensbodys = entry.querySelectorAll('.sense-body') || [];
             for (const sensbody of sensbodys) {
                 let sensblocks = sensbody.childNodes || [];
+                let guideWord = sensbody.previousElementSibling.querySelector(".guideword").innerText ?? '';
                 for (const sensblock of sensblocks) {
                     let phrasehead = '';
                     let defblocks = [];
@@ -93,7 +94,7 @@ class encn_Cambridge {
                         eng_tran = `<span class='eng_tran'>${eng_tran.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span>`;
                         // chn_tran = `<span class='chn_tran'>${chn_tran}</span>`;
                         let tran = `<span class='tran'>${eng_tran}</span>`;
-                        definition += phrasehead ? `${phrasehead}${tran}` : `${level}${pos}${tran}`;
+                        definition += phrasehead ? `${phrasehead}${tran}` : `${level}${pos}${guideWord}${tran}`;
 
                         // make exmaple segement
                         let examps = defblock.querySelectorAll('.def-body .examp') || [];
@@ -117,7 +118,9 @@ class encn_Cambridge {
                 expression,
                 reading,
                 definitions,
-                audios
+                audios,
+                extraInfor:"assaf",
+                extrainfo:"aaaaaa"
             });
         }
         let idioms = doc.querySelectorAll('.pr > .idiom-block') || [];
@@ -145,6 +148,7 @@ class encn_Cambridge {
             let sensbodys = idiom.querySelectorAll('.sense-body') || [];
             for (const sensbody of sensbodys) {
                 let sensblocks = sensbody.childNodes || [];
+                let guideWord = sensbody.previousElementSibling.querySelector(".guideword").innerText ?? '';
                 for (const sensblock of sensblocks) {
                     let phrasehead = '';
                     let defblocks = [];
@@ -169,7 +173,7 @@ class encn_Cambridge {
                         eng_tran = `<span class='eng_tran'>${eng_tran.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span>`;
                         // chn_tran = `<span class='chn_tran'>${chn_tran}</span>`;
                         let tran = `<span class='tran'>${eng_tran}</span>`;
-                        definition += phrasehead ? `${phrasehead}${tran}` : `${level}${pos}${tran}`;
+                        definition += phrasehead ? `${phrasehead}${tran}` : `${level}${pos}${guideWord}${tran}`;
 
                         // make exmaple segement
                         let examps = defblock.querySelectorAll('.def-body .examp') || [];
