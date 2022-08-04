@@ -114,7 +114,7 @@ class encn_Cambridge {
                     }
                 }
             }
-            finalDefinitions = finalDefinitions.push(...definitions);
+            finalDefinitions.push(...definitions);
             let css = this.renderCSS();
             notes.push({
                 css,
@@ -195,7 +195,7 @@ class encn_Cambridge {
                 }
             }
             let css = this.renderCSS();
-            finalDefinitions = finalDefinitions.push(...definitions);
+            finalDefinitions.push(...definitions);
             notes.push({
                 css,
                 expression,
